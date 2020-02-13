@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+
+namespace gamer_management2
+{
+    public partial class User_profile : System.Web.UI.Page
+    {
+        public string cnstring = "Data Source=DESKTOP-BQ12MSI;Initial Catalog=Gamer-Management;Integrated Security=True";
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void wlcmbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ebtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cnstring);
+            con.Open();
+            if (con.State == System.Data.ConnectionState.Open) 
+            {
+                string str = "insert into user_profile (email_address, password, first_name, last_name, date_of_birth, access_type, phone_number, department, address)values('" + email.Text.ToString() + "','" + password.Text.ToString() + "','" + fntxt.Text.ToString() + "','" + lntxt.Text.ToString() + "','" + dobtxt.Text.ToString() + "','" + DropDownList1.Text.ToString() + "','" + phntxt.Text.ToString() + "','" + DropDownList2.Text.ToString() + "','" + adrstxt.Text.ToString() + "')";
+                SqlCommand cmd = new SqlCommand(str, con);
+
+                cmd.ExecuteNonQuery();
+
+
+                Response.Redirect("User profile.aspx");
+            }
+        }
+
+        protected void logoutbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void mpbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User profile.aspx");
+        }
+
+        protected void mpbtn0_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User Admin.aspx");
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Welcome Host.aspx");
+        }
+    }
+}
