@@ -26,7 +26,7 @@
 }
         .auto-style2 {
             margin-left: 120px;
-            text-align: center;
+            text-align: left;
         }
         .auto-style3 {
             text-align: right;

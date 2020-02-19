@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 140px;
+            width: 155px;
         }
         .auto-style3 {
             width: 122%;
@@ -56,11 +56,24 @@
         .auto-style15 {
             font-size: 38pt;
         }
-        .auto-style17 {
-            width: 33px;
+        .auto-style19 {
+            width: 155px;
+            height: 49px;
         }
-        .auto-style18 {
-            width: 174px;
+        .auto-style20 {
+            width: 123px;
+            height: 49px;
+            text-align: left;
+        }
+        .auto-style21 {
+            width: 391px;
+            height: 49px;
+        }
+        .auto-style22 {
+            font-size: xx-large;
+        }
+        .auto-style23 {
+            width: 123px;
         }
     </style>
 </head>
@@ -85,7 +98,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Email Address" CssClass="auto-style12"></asp:Label>
                         </strong>
                     </td>
-                    <td class="auto-style17">
+                    <td class="auto-style23">
                         <br />
                         <asp:TextBox ID="TextBox1" runat="server" Width="274px" CssClass="auto-style4"></asp:TextBox>
                         <br />
@@ -95,8 +108,6 @@
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Email Address cannot be empty" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style1">
@@ -104,7 +115,7 @@
                         <asp:Label ID="Label2" runat="server" Text="Password" CssClass="auto-style12"></asp:Label>
                         </strong>
                     </td>
-                    <td class="auto-style17">
+                    <td class="auto-style23">
                         <asp:TextBox ID="TextBox2" runat="server" Width="274px" TextMode="Password"></asp:TextBox>
                     </td>
                     <td class="auto-style10">
@@ -112,14 +123,12 @@
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password cannot be empty" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style1"><strong>
                         <asp:Label ID="Label5" runat="server" CssClass="auto-style12" Text="Confirm Password"></asp:Label>
                         </strong></td>
-                    <td class="auto-style17">
+                    <td class="auto-style23">
                         <asp:TextBox ID="TextBox3" runat="server" Width="274px"  TextMode="Password"></asp:TextBox>
                     </td>
                     <td class="auto-style10">
@@ -127,14 +136,12 @@
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="Confirm password cannot be empty" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style1"><strong>
                         <asp:Label ID="Label6" runat="server" CssClass="auto-style12" Text="First Name"></asp:Label>
                         </strong></td>
-                    <td class="auto-style17">
+                    <td class="auto-style23">
                         <asp:TextBox ID="TextBox4" runat="server" Width="274px"></asp:TextBox>
                     </td>
                     <td class="auto-style10">
@@ -142,14 +149,12 @@
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="First Name cannot be empty" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style1"><strong>
                         <asp:Label ID="Label7" runat="server" CssClass="auto-style12" Text="Last Name"></asp:Label>
                         </strong></td>
-                    <td class="auto-style17">
+                    <td class="auto-style23">
                         <asp:TextBox ID="TextBox5" runat="server" Width="274px"></asp:TextBox>
                     </td>
                     <td class="auto-style10">
@@ -157,23 +162,31 @@
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="Last Name cannot be empty" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style1"><strong>
                         <asp:Label ID="Label8" runat="server" CssClass="auto-style12" Text="Date Of Birth"></asp:Label>
                         </strong></td>
-                    <td class="auto-style17">
-                        <asp:TextBox ID="TextBox6" runat="server" Width="274px"></asp:TextBox>
+                    <td class="auto-style23">
+                        <asp:TextBox ID="TextBox6" runat="server" Width="274px" TextMode="Date"></asp:TextBox>
                     </td>
                     <td class="auto-style10">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox6" ErrorMessage="Date Format DD/MM/YYYY" ForeColor="Red" ValidationExpression="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"></asp:RegularExpressionValidator>
                         <br />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox6" ErrorMessage="Date of birth is required" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style20">
+                        &nbsp;<asp:Label ID="Label9" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="36pt" ForeColor="#990000" CssClass="auto-style22"></asp:Label>
+                        <br />
+                        <br />
+                        <asp:TextBox ID="TextBox7" runat="server" Height="16px" Width="273px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style21">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBox7" ErrorMessage="Captha Code Cannot be blank" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
             </table>
                     <br />
