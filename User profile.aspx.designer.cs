@@ -24,13 +24,13 @@ namespace gamer_management2
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// welcome control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button welcome;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// gmlbl control.
@@ -69,24 +69,6 @@ namespace gamer_management2
         protected global::System.Web.UI.WebControls.Button mpbtn;
 
         /// <summary>
-        /// Panel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-
-        /// <summary>
-        /// mpbtn0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button mpbtn0;
-
-        /// <summary>
         /// uplbl control.
         /// </summary>
         /// <remarks>
@@ -96,13 +78,13 @@ namespace gamer_management2
         protected global::System.Web.UI.WebControls.Label uplbl;
 
         /// <summary>
-        /// mpbtn1 control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button mpbtn1;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// emailbl control.
@@ -357,6 +339,15 @@ namespace gamer_management2
         protected global::System.Web.UI.WebControls.TextBox adrstxt0;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// ebtn control.
         /// </summary>
         /// <remarks>
@@ -366,21 +357,12 @@ namespace gamer_management2
         protected global::System.Web.UI.WebControls.Button ebtn;
 
         /// <summary>
-        /// ebtn0 control.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ebtn0;
-
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }

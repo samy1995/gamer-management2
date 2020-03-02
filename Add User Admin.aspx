@@ -281,7 +281,7 @@
                     <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td>
-                        <asp:Button ID="Button5" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Save" Width="85px" />
+                        <asp:Button ID="Button5" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Save" Width="85px" OnClick="Button5_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Cancel" Width="85px" CausesValidation="false"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

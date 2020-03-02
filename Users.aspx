@@ -111,7 +111,7 @@
                     <td class="auto-style21" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button5" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="View" Width="85px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Edit" Width="85px" />
+                        <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Edit" Width="85px" OnClick="Button6_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -134,10 +134,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style16" colspan="2">
                         <br />
-                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource1">
+                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource2" Width="679px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
                                 <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
                                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
@@ -154,6 +153,20 @@
                             <SortedDescendingCellStyle BackColor="#FCF6C0" />
                             <SortedDescendingHeaderStyle BackColor="#820000" />
                         </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString3 %>" SelectCommand="SELECT 
+User_profile.User_id, User_profile .first_name, User_profile .last_name,  User_profile .access_type, User_profile .department
+FROM
+User_profile 
+JOIN Signup
+ON User_profile.User_id = Signup.User_id
+WHERE
+User_profile.first_name like'%' + @first_name + '%'
+ORDER BY
+first_name DESC">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="TextBox1" Name="first_name" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString %>" SelectCommand="SELECT 
 user_profile.User_id, user_profile .first_name, user_profile .last_name, user_profile .department, user_profile .access_type
 FROM

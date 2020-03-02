@@ -15,19 +15,7 @@ namespace gamer_management2
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie loginStatusCookie = Request.Cookies["login_status"];
-            if (loginStatusCookie != null && loginStatusCookie.Value == "1")
-            {
-                //User did not log out explicitly.
-                //Display timeout message.
-                Response.Write("Login Successfull..!!");
-            }
-            else
-            {
-                //User either logged out or it is his/her first visit.
-                //Display usual greeting.
-                //Response.Write("Logout Successfull..!!");
-            }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -58,7 +46,7 @@ namespace gamer_management2
                     Session["Name"] = dt.Rows[0][2].ToString();
                     Session["Lname"] = dt.Rows[0][3].ToString();
                     
-                    Response.Redirect("~/Welcome Gamer.aspx", false);
+                    Response.Redirect("~/Welcome Host.aspx", false);
                 }
                 else
                 {
@@ -68,7 +56,7 @@ namespace gamer_management2
                 
                 
                 
-                Response.Redirect("Welcome Gamer.aspx");
+                //Response.Redirect("Welcome Gamer.aspx");
             }
 
 

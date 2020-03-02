@@ -63,6 +63,11 @@ namespace gamer_management2
         {
             Response.Redirect("Users.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

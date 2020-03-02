@@ -33,5 +33,10 @@ namespace gamer_management2
         {
 
         }
+
+        protected void ebtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

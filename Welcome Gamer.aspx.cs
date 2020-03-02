@@ -11,8 +11,8 @@ namespace gamer_management2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = " Welcome \t" + Session["name"].ToString()+ " " + Session["Lname"].ToString();
-
+            Label1.Text = " Welcome \t" + Session["name"].ToString() + " " + Session["Lname"].ToString();
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,8 +27,9 @@ namespace gamer_management2
 
         protected void logoutbtn_Click(object sender, EventArgs e)
         {
-            
-            Response.Cookies.Add(new HttpCookie("login_status", "0"));
+            Session.Abandon();
+            Session.Clear();
+            Session.Contents.RemoveAll();
             Response.Redirect("Login.aspx", true);
         }
 

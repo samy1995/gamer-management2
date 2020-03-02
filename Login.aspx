@@ -45,6 +45,13 @@
           background-size: cover;
 
 }
+        .auto-style8 {
+            font-size: large;
+        }
+        .auto-style9 {
+            font-size: medium;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -60,27 +67,37 @@
             <br />
             <table align="left" class="auto-style2">
                 <tr>
-                    <td class="auto-style5">Username</td>
+                    <td class="auto-style5"><strong>
+                        <asp:Label ID="Label6" runat="server" CssClass="auto-style8" Text="UserName"></asp:Label>
+                        </strong></td>
                     <td class="auto-style1">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="283px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Width="285px" Height="25px"></asp:TextBox>
                     </td>
                     <td class="auto-style6">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username Cannot Be Empty" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <strong>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username Cannot Be Empty" ForeColor="Red" CssClass="auto-style8"></asp:RequiredFieldValidator>
+                        </strong>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">Password</td>
+                    <td class="auto-style5"><strong>
+                        <asp:Label ID="Label7" runat="server" CssClass="auto-style8" Text="Password"></asp:Label>
+                        </strong></td>
                     <td class="auto-style1">
-                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" Width="283px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" Width="285px" Height="25px"></asp:TextBox>
                     </td>
                     <td class="auto-style6">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password Cannot Be Empty" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <strong>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password Cannot Be Empty" ForeColor="Red" CssClass="auto-style8"></asp:RequiredFieldValidator>
+                        </strong>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style1">
-                        <asp:Label ID="Label5" runat="server" ForeColor="Red"></asp:Label>
+                        <strong>
+                        <asp:Label ID="Label5" runat="server" ForeColor="Red" CssClass="auto-style8"></asp:Label>
+                        </strong>
                     </td>
                     <td class="auto-style6">
                         &nbsp;</td>
@@ -91,8 +108,10 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="129px" />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign up" Width="118px"  CausesValidation="false" />
+                <strong>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="129px" CssClass="auto-style9" />
+                </strong>&nbsp;<strong><asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign up" Width="118px"  CausesValidation="false" CssClass="auto-style9" />
+                </strong>
             </div>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DESKTOP-BQ12MSI;Initial Catalog=signup;Integrated Security=True"></asp:SqlDataSource>
                     </div>

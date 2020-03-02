@@ -18,23 +18,11 @@ namespace gamer_management2
 
         }
 
-  
+
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Response.Redirect("Add User Admin.aspx");
 
-            SqlConnection con = new SqlConnection(cnstring);
-            con.Open();
-            if (con.State == System.Data.ConnectionState.Open)
-            {
-                string str = "insert into user_profile (email_address, password, first_name, last_name, date_of_birth, access_type, phone_number, department, address)values('" + email.Text.ToString() + "','" + password.Text.ToString() + "','" + fntxt.Text.ToString() + "','" + lntxt.Text.ToString() + "','" + dobtxt.Text.ToString() + "','" + DropDownList1.Text.ToString() + "','" + phntxt.Text.ToString() + "','" + DropDownList2.Text.ToString() + "','" + adrstxt.Text.ToString() + "')";
-                SqlCommand cmd = new SqlCommand(str, con);
-
-                cmd.ExecuteNonQuery();
-
-
-                Response.Redirect("Add User Admin.aspx");
-            }
-           
         }
 
         protected void Button1_Click1(object sender, EventArgs e)
@@ -55,6 +43,20 @@ namespace gamer_management2
         protected void logoutbtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cnstring);
+            con.Open();
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                string str = "insert into User_profile (email_address, password, first_name, last_name, date_of_birth, access_type, phone_number, department, address,postal_code)values('" + email.Text.ToString() + "','" + password.Text.ToString() + "','" + fntxt.Text.ToString() + "','" + lntxt.Text.ToString() + "','" + dobtxt.Text.ToString() + "','" + DropDownList1.Text.ToString() + "','" + phntxt.Text.ToString() + "','" + DropDownList2.Text.ToString() + "','" + adrstxt.Text.ToString() + "','" + adrstxt0.Text.ToString() + "')";
+                SqlCommand cmd = new SqlCommand(str, con);
+
+                cmd.ExecuteNonQuery();
+                Response.Redirect("Add User Admin.aspx");
+            }
         }
     }
 }

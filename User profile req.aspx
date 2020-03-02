@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 174px;
+            width: 165px;
         }
         .auto-style2 {
             width: 100%;
@@ -85,7 +85,7 @@
         }
         .auto-style29 {
             text-align: left;
-            width: 174px;
+            width: 166px;
         }
         .auto-style30 {
             width: 192px;
@@ -100,7 +100,7 @@
                 <tr>
                     <td class="auto-style29">
                             <em>
-                            <asp:Button ID="Button1" runat="server" Font-Bold="True" Text="Welcome" Width="170px" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" CausesValidation="false" OnClick="Button1_Click1"/>
+                            <asp:Button ID="Button1" runat="server" Font-Bold="True" Text="Welcome" Width="162px" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" CausesValidation="false" OnClick="Button1_Click1"/>
                             </em>
                     </td>
                     <td class="auto-style26">
@@ -115,7 +115,7 @@
                 <tr>
                     <td class="auto-style1">
                         <asp:Panel ID="Panel1" runat="server" CssClass="auto-style19">
-                            <asp:Button ID="Button2" runat="server" Text="My Profile" Width="170px" Font-Bold="True" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" CausesValidation="false" OnClick="Button2_Click1"/>
+                            <asp:Button ID="Button2" runat="server" Text="My Profile" Width="162px" Font-Bold="True" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" CausesValidation="false" OnClick="Button2_Click1"/>
                         </asp:Panel>
                     </td>
                     <td class="auto-style30">
@@ -126,7 +126,7 @@
                 </table>
             <table class="auto-style23">
                 <tr>
-                    <td class="auto-style7"></td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style8">
                         <asp:Label ID="emailbl" runat="server" Font-Bold="True" Text="Email Address" CssClass="auto-style19"></asp:Label>
                         <br />
@@ -276,7 +276,7 @@
                     <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td>
-                        <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19"  />
+                        <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19" OnClick="ebtn_Click"  />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <b>
                         <asp:Button ID="reabtn" runat="server" Text="Request Elevated Access" Width="243px" Font-Bold="True" CssClass="auto-style19" OnClick="reabtn_Click" />

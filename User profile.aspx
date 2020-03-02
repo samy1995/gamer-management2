@@ -38,10 +38,6 @@
             width: 203px;
             font-weight: bold;
         }
-        .auto-style15 {
-            width: 190px;
-            font-weight: bold;
-        }
         .auto-style16 {
             width: 101px;
         }
@@ -101,6 +97,9 @@
             width: 100%;
             height: 9px;
         }
+        .auto-style34 {
+            font-size: large;
+        }
     </style>
 </head>
 <body>
@@ -125,7 +124,7 @@
                 <tr>
                     <td class="auto-style1">
                         <asp:Panel ID="Panel1" runat="server" CssClass="auto-style19">
-                            <asp:Button ID="mpbtn" runat="server" Text="My Profile" Width="162px" Font-Bold="True" BackColor="#993333" ForeColor="#FFFFCC" Height="36px" OnClick="mpbtn_Click" CausesValidation="false"/>
+                            <asp:Button ID="mpbtn" runat="server" Text="My Profile" Width="162px" Font-Bold="True" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" OnClick="mpbtn_Click" CausesValidation="false"/>
                         </asp:Panel>
                     </td>
                     <td class="auto-style28">
@@ -136,7 +135,11 @@
                 </table>
             <table class="auto-style23">
                 <tr>
-                    <td class="auto-style7"></td>
+                    <td class="auto-style7">
+                        <strong>
+                        <asp:Button ID="Button3" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" OnClick="Button3_Click" Text="Users" Width="162px" CssClass="auto-style19" CausesValidation="false"/>
+                        </strong>
+                    </td>
                     <td class="auto-style8">
                         <asp:Label ID="emailbl" runat="server" Font-Bold="True" Text="Email Address" CssClass="auto-style19"></asp:Label>
                         <br />
@@ -156,7 +159,7 @@
                     </td>
                     <td>
                         <br />
-                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19" OnTextChanged="password_TextChanged"></asp:TextBox>
                         <b>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="password" ErrorMessage="* Field Cannot Be Blank" ForeColor="Red"></asp:RequiredFieldValidator>
                         </b>
@@ -278,23 +281,53 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td><strong>
+                        <asp:Label ID="Label1" runat="server" CssClass="auto-style34" ForeColor="Red" Height="33px" Width="162px"></asp:Label>
+                        </strong></td>
                 </tr>
             </table>
             <table class="auto-style2">
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td>
-                        <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19" OnClick="ebtn_Click" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19"  Height="30px" OnClick="ebtn_Click1"  />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </td>
                 </tr>
             </table>
             <b>
             <br />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <br />
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString3 %>" DeleteCommand="DELETE FROM [User_profile] WHERE [email_address] = @email_address" InsertCommand="INSERT INTO [User_profile] ([email_address], [password], [first_name], [last_name], [date_of_birth], [access_type], [phone_number], [department], [address]) VALUES (@email_address, @password, @first_name, @last_name, @date_of_birth, @access_type, @phone_number, @department, @address)" SelectCommand="SELECT * FROM [User_profile]" UpdateCommand="UPDATE [User_profile] SET [User_id] = @User_id, [password] = @password, [first_name] = @first_name, [last_name] = @last_name, [date_of_birth] = @date_of_birth, [access_type] = @access_type, [phone_number] = @phone_number, [department] = @department, [address] = @address WHERE [email_address] = @email_address">
+                <DeleteParameters>
+                    <asp:Parameter Name="email_address" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="email_address" Type="String" />
+                    <asp:Parameter Name="password" Type="String" />
+                    <asp:Parameter Name="first_name" Type="String" />
+                    <asp:Parameter Name="last_name" Type="String" />
+                    <asp:Parameter DbType="Date" Name="date_of_birth" />
+                    <asp:Parameter Name="access_type" Type="String" />
+                    <asp:Parameter Name="phone_number" Type="String" />
+                    <asp:Parameter Name="department" Type="String" />
+                    <asp:Parameter Name="address" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="User_id" Type="Int32" />
+                    <asp:Parameter Name="password" Type="String" />
+                    <asp:Parameter Name="first_name" Type="String" />
+                    <asp:Parameter Name="last_name" Type="String" />
+                    <asp:Parameter DbType="Date" Name="date_of_birth" />
+                    <asp:Parameter Name="access_type" Type="String" />
+                    <asp:Parameter Name="phone_number" Type="String" />
+                    <asp:Parameter Name="department" Type="String" />
+                    <asp:Parameter Name="address" Type="String" />
+                    <asp:Parameter Name="email_address" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
             <br />
             <br />
             </b>
