@@ -126,7 +126,7 @@
                             <asp:ListItem>Arcade Game</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label4" runat="server" Text="Search"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;<asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
 &nbsp;<asp:Button ID="Button4" runat="server" Text="Search" OnClick="Button4_Click" style="height: 26px" />
                     </td>
                 </tr>
@@ -137,6 +137,7 @@
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource2" Width="679px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
+                                <asp:CommandField ShowSelectButton="True" />
                                 <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
                                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
@@ -160,10 +161,11 @@ User_profile
 JOIN Signup
 ON User_profile.User_id = Signup.User_id
 WHERE
-User_profile.first_name like'%' + @first_name + '%'
-ORDER BY
-first_name DESC">
+User_profile.department like'%' + @department + '%' AND
+User_profile.first_name like '%' + @first_name + '%'
+">
                             <SelectParameters>
+                                <asp:ControlParameter ControlID="DropDownList1" Name="department" PropertyName="SelectedValue" />
                                 <asp:ControlParameter ControlID="TextBox1" Name="first_name" PropertyName="Text" />
                             </SelectParameters>
                         </asp:SqlDataSource>

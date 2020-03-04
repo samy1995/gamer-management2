@@ -146,7 +146,7 @@
                     </td>
                     <td>
                         <br />
-                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19"></asp:TextBox>
                         <b>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="password" ErrorMessage="* Field Cannot Be Blank" ForeColor="Red"></asp:RequiredFieldValidator>
                         </b>
@@ -203,13 +203,14 @@
                         <br />
                     </td>
                     <td>
-                        <asp:Localize ID="Localize1" runat="server"></asp:Localize>
                         <br />
                         <asp:DropDownList ID="DropDownList1" runat="server" Width="219px" CssClass="auto-style19">
                             <asp:ListItem>Gamer</asp:ListItem>
                             <asp:ListItem>Host</asp:ListItem>
                             <asp:ListItem>Admin</asp:ListItem>
                         </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="Button3" runat="server" Text="Request Elevated Access" Width="279px" OnClick="Button3_Click" CausesValidation="false"/>
                     </td>
                 </tr>
                 <tr>
@@ -278,13 +279,12 @@
                     <td>
                         <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19" OnClick="ebtn_Click"  />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <b>
-                        <asp:Button ID="reabtn" runat="server" Text="Request Elevated Access" Width="243px" Font-Bold="True" CssClass="auto-style19" OnClick="reabtn_Click" />
-                        </b>
-                    </td>
+                        </td>
                 </tr>
             </table>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True"></asp:Label>
             <b>
+            <br />
             <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <br />

@@ -223,6 +223,7 @@
                             <asp:ListItem>Host</asp:ListItem>
                             <asp:ListItem>Admin</asp:ListItem>
                         </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
                 <tr>
@@ -299,6 +300,7 @@
             </table>
             <b>
             <br />
+            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
             <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString3 %>" DeleteCommand="DELETE FROM [User_profile] WHERE [email_address] = @email_address" InsertCommand="INSERT INTO [User_profile] ([email_address], [password], [first_name], [last_name], [date_of_birth], [access_type], [phone_number], [department], [address]) VALUES (@email_address, @password, @first_name, @last_name, @date_of_birth, @access_type, @phone_number, @department, @address)" SelectCommand="SELECT * FROM [User_profile]" UpdateCommand="UPDATE [User_profile] SET [User_id] = @User_id, [password] = @password, [first_name] = @first_name, [last_name] = @last_name, [date_of_birth] = @date_of_birth, [access_type] = @access_type, [phone_number] = @phone_number, [department] = @department, [address] = @address WHERE [email_address] = @email_address">
                 <DeleteParameters>

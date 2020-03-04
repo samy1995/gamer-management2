@@ -22,7 +22,7 @@ namespace gamer_management2
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("User Profile.aspx");
+            Response.Redirect("User profile req.aspx");
         }
 
         protected void logoutbtn_Click(object sender, EventArgs e)

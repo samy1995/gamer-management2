@@ -165,14 +165,16 @@
                             <SortedDescendingHeaderStyle BackColor="#820000" />
                         </asp:GridView>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString3 %>" SelectCommand="SELECT 
-user_profile.User_id, user_profile .first_name, user_profile .last_name, user_profile .department, user_profile .access_type
+User_profile.User_id, User_profile .first_name, User_profile .last_name,  User_profile .access_type, User_profile .department
 FROM
-user_profile 
-JOIN Login 
-ON user_profile.User_id = Login.User_id
+User_profile 
+JOIN Signup
+ON User_profile.User_id = Signup.User_id
 WHERE
-first_name like'%' + @first_name + '%'">
+User_profile.department like'%' + @department + '%' AND
+User_profile.first_name like '%' + @first_name + '%'">
                             <SelectParameters>
+                                <asp:ControlParameter ControlID="DropDownList1" Name="department" PropertyName="SelectedValue" />
                                 <asp:ControlParameter ControlID="TextBox1" Name="first_name" PropertyName="Text" />
                             </SelectParameters>
                         </asp:SqlDataSource>

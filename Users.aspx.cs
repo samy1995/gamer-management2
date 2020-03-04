@@ -27,12 +27,13 @@ namespace gamer_management2
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string str = "Select* from user_profile where first_name like '%' + @first_name + '%'";
+                string str = "Select  * from User_profile where first_name like '%' + @first_name + '%' AND department like '%' + @department + '%'";
                 SqlCommand cmd = new SqlCommand(str, con);
                 cmd.CommandText = str;
                 cmd.Connection = con;
                 da.SelectCommand = cmd;
                 cmd.Parameters.AddWithValue("first_name", TextBox1.Text);
+                cmd.Parameters.AddWithValue("department", DropDownList1.Text);
                 dt = new DataTable();
                 da.Fill(dt);
                 
@@ -68,6 +69,7 @@ namespace gamer_management2
         {
 
         }
+
     }
 
 }

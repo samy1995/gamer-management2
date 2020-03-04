@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.Security;
 
 namespace gamer_management2
 {
@@ -46,17 +47,29 @@ namespace gamer_management2
                     Session["Name"] = dt.Rows[0][2].ToString();
                     Session["Lname"] = dt.Rows[0][3].ToString();
                     
-                    Response.Redirect("~/Welcome Host.aspx", false);
+                    //Response.Redirect("~/Welcome Gamer.aspx", false);
                 }
+
                 else
                 {
-                    Label5.Text = "Invalid username or password";
+                    Label5.Text = "Invalid Username or Password";
+                    //str = "Select access_type FROM User_profile Where access_type = '"+ access_type + "'";
+                    //if (User.IsInRole(User_profile.access_type, "Admin"))
+                    //{
+                    //    Response.Redirect("Welcome Admin.aspx");
+                    //}
+                    //else if (User.IsInRole("Host"))
+                    //{
+                    //    Response.Redirect("Welcome Host.aspx");
+                    //}
+                    //else
+                    //{
+                    //    Response.Redirect("Welcome Gamer.aspx");
+                    //}
+
                 }
                 cmd.ExecuteNonQuery();
-                
-                
-                
-                //Response.Redirect("Welcome Gamer.aspx");
+                Response.Redirect("Welcome Gamer.aspx");
             }
 
 

@@ -53,6 +53,17 @@
             font-weight: bold;
         }
     </style>
+<%--    <script>
+if("[@access_type:Admin]" == "Yes"){
+Rsponse.Rediret("Welcome Admin.aspx");
+}
+else if ("[@access_type:Host]" == "Yes") {
+    Rsponse.Rediret("Welcome Host.aspx");
+}
+else{
+    Rsponse.Rediret("Welcome Gamer.aspx");
+}
+</script>--%>
 </head>
 <body>
     <form id="form1" runat="server" class="auto-style4">

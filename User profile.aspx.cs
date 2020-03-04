@@ -24,7 +24,7 @@ namespace gamer_management2
             int n;
             var sb = new System.Text.StringBuilder();
             con.Open();
-            if (!this.IsPostBack)
+            if (!this.IsPostBack )
             {
 
                 //string str = "SELECT Signup.email_address, Signup.password, Signup.first_name, Signup.last_name, Signup.date_of_birth/*, User_profile.access_type, User_profile.phone_number, User_profile.department, User_profile.address*/ FROM Signup /*INNER JOIN User_profile ON Signup.User_id = User_profile.User_id */ where email_address='" + Session["email_address"] + "'";
@@ -37,32 +37,33 @@ namespace gamer_management2
                 DataSet ds = new DataSet();
 
                 da.Fill(ds);
+                
+                
+                    email.Text = ds.Tables[0].Rows[0]["email_address"].ToString();
 
-                email.Text = ds.Tables[0].Rows[0]["email_address"].ToString();
-
-                s = ds.Tables[0].Rows[0]["password"].ToString();
+                    s = ds.Tables[0].Rows[0]["password"].ToString();
 
 
-                for (int i = 0; i < s.Length; i++)
-                {
-                    temp = s.Replace(s[i], '*');
-                    sb.Append(temp[i].ToString());
-                }
-                password.Text = sb.ToString();
-                fntxt.Text = ds.Tables[0].Rows[0]["first_name"].ToString();
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        temp = s.Replace(s[i], '*');
+                        sb.Append(temp[i].ToString());
+                    }
+                    password.Text = sb.ToString();
+                    fntxt.Text = ds.Tables[0].Rows[0]["first_name"].ToString();
 
-                lntxt.Text = ds.Tables[0].Rows[0]["last_name"].ToString();
+                    lntxt.Text = ds.Tables[0].Rows[0]["last_name"].ToString();
 
-                dobtxt.Text = ds.Tables[0].Rows[0]["date_of_birth"].ToString();
-                DropDownList1.Text = ds.Tables[0].Rows[0]["access_type"].ToString();
+                    dobtxt.Text = ds.Tables[0].Rows[0]["date_of_birth"].ToString();
+                    DropDownList1.Text = ds.Tables[0].Rows[0]["access_type"].ToString();
 
-                phntxt.Text = ds.Tables[0].Rows[0]["phone_number"].ToString();
+                    phntxt.Text = ds.Tables[0].Rows[0]["phone_number"].ToString();
 
-                DropDownList2.Text = ds.Tables[0].Rows[0]["department"].ToString();
+                    DropDownList2.Text = ds.Tables[0].Rows[0]["department"].ToString();
 
-                adrstxt.Text = ds.Tables[0].Rows[0]["address"].ToString();
-                adrstxt0.Text = ds.Tables[0].Rows[0]["postal_code"].ToString();
-
+                    adrstxt.Text = ds.Tables[0].Rows[0]["address"].ToString();
+                    adrstxt0.Text = ds.Tables[0].Rows[0]["postal_code"].ToString();
+                
 
             }
 
@@ -117,7 +118,7 @@ namespace gamer_management2
             {
                 string str = "insert into User_profile (email_address, password, first_name, last_name, date_of_birth, access_type, phone_number, department, address, postal_code)values('" + email.Text.ToString() + "','" + password.Text.ToString() + "','" + fntxt.Text.ToString() + "','" + lntxt.Text.ToString() + "','" + dobtxt.Text.ToString() + "','" + DropDownList1.Text.ToString() + "','" + phntxt.Text.ToString() + "','" + DropDownList2.Text.ToString() + "','" + adrstxt.Text.ToString() + "','" + adrstxt0.Text.ToString() + "')";
 
-                Response.Write("Profile Updated Successfully..!!");
+                Label2.Text = "Profile Updated Successfully...!!";
                 Response.Redirect("User profile.aspx");
 
             }

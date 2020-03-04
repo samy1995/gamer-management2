@@ -17,6 +17,10 @@ namespace gamer_management2
         protected void logoutbtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+            Session.Abandon();
+            Session.Clear();
+            Session.Contents.RemoveAll();
+            Response.Redirect("Login.aspx", true);
         }
 
         protected void Button1_Click(object sender, EventArgs e)

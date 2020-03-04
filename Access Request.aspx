@@ -125,7 +125,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style16" colspan="2">
                         <br />
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="312px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="312px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="Request_id">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:CommandField ShowSelectButton="True" />
@@ -134,6 +134,8 @@
                                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
                                 <asp:BoundField DataField="department" HeaderText="department" SortExpression="department" />
                                 <asp:BoundField DataField="access_type" HeaderText="access_type" SortExpression="access_type" />
+                                <asp:BoundField DataField="Request_id" HeaderText="Request_id" InsertVisible="False" ReadOnly="True" SortExpression="Request_id" />
+                                <asp:BoundField DataField="Request_status" HeaderText="Request_status" SortExpression="Request_status" />
                             </Columns>
                             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -146,18 +148,12 @@
                             <SortedDescendingHeaderStyle BackColor="#820000" />
                         </asp:GridView>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString2 %>" SelectCommand="SELECT 
-user_profile.User_id, user_profile .first_name, user_profile .last_name, user_profile .department, user_profile .access_type
+user_profile.User_id, user_profile .first_name, user_profile .last_name, user_profile .department, user_profile .access_type, Request.Request_id, Request.Request_status
 FROM
 user_profile 
-JOIN Login 
-ON user_profile.User_id = Login.User_id
-WHERE
-first_name like'%' + @first_name + '%'
-ORDER BY
-first_name DESC">
-                            <SelectParameters>
-                                <asp:ControlParameter ControlID="TextBox1" Name="first_name" PropertyName="Text" Type="String" />
-                            </SelectParameters>
+JOIN Request
+ON user_profile.email_address = Request.email_address
+">
                         </asp:SqlDataSource>
                     </td>
                 </tr>
