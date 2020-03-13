@@ -70,6 +70,10 @@ namespace gamer_management2
 
         }
 
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

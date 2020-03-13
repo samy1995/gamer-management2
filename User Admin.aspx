@@ -121,7 +121,7 @@
                         &nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Edit" Width="85px" />
                     &nbsp;&nbsp;
-                        <asp:Button ID="Button9" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Delete" Width="85px" />
+                        <asp:Button ID="Button9" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Delete" Width="85px" CommandName="Delete Row" OnClick="Button9_Click1" />
                     </td>
                 </tr>
                 <tr>
@@ -144,15 +144,32 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style16" colspan="2">
                         <br />
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="312px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                        <asp:Label ID="Label5" runat="server"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="598px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1"> <%--OnRowCommand="GridView1_RowCommand"--%>
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
-                                <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
-                                <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
-                                <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
-                                <asp:BoundField DataField="department" HeaderText="department" SortExpression="department" />
-                                <asp:BoundField DataField="access_type" HeaderText="access_type" SortExpression="access_type" />
+                                <%--<asp:CommandField ShowSelectButton="True" />--%>
+                                 <asp:TemplateField>
+                                     <ItemTemplate>
+                                         <asp:CheckBox ID="CheckBox1" runat="server" />
+                                     </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="User_id" HeaderText="User Id" SortExpression="User_id" >
+                                    <ControlStyle Font-Bold="False" Font-Size="Medium" />
+                                    <ItemStyle HorizontalAlign="Center" />
+                                 </asp:BoundField>
+                                <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" >
+                                    <ItemStyle HorizontalAlign="Center" />
+                                 </asp:BoundField>
+                                <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name" >
+                                    <ItemStyle HorizontalAlign="Center" />
+                                 </asp:BoundField>
+                                <asp:BoundField DataField="department" HeaderText="Department" SortExpression="department" >
+                                    <ItemStyle HorizontalAlign="Center" />
+                                 </asp:BoundField>
+                                <asp:BoundField DataField="access_type" HeaderText="Access Type" SortExpression="access_type" >
+                                    <ItemStyle HorizontalAlign="Center" />
+                                 </asp:BoundField>
                             </Columns>
                             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -172,7 +189,11 @@ JOIN Signup
 ON User_profile.User_id = Signup.User_id
 WHERE
 User_profile.department like'%' + @department + '%' AND
+User_profile.first_name like '%' + @first_name + '%'" DeleteCommand="delete from User_profile where
 User_profile.first_name like '%' + @first_name + '%'">
+                            <DeleteParameters>
+                                <asp:Parameter Name="first_name" />
+                            </DeleteParameters>
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="DropDownList1" Name="department" PropertyName="SelectedValue" />
                                 <asp:ControlParameter ControlID="TextBox1" Name="first_name" PropertyName="Text" />

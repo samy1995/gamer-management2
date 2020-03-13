@@ -109,7 +109,7 @@
                     <td class="auto-style3">
                         &nbsp;</td>
                     <td class="auto-style21" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button5" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="View" Width="85px" />
+                        <asp:Button ID="Button5" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="View" Width="85px" OnClick="Button5_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Edit" Width="85px" OnClick="Button6_Click" />
                     </td>
@@ -137,7 +137,15 @@
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource2" Width="679px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
+<%--                                <asp:CommandField ShowSelectButton="True" />--%>
+                                 <asp:TemplateField>
+                                <ItemTemplate>
+                        <asp:CheckBox ID="chck" runat="server" 
+                            AutoPostBack="true" />
+                            <%--Checked='<%# Convert.ToBoolean(Eval("")) %>'
+                            Text='<%# Eval("Approved").ToString().Equals("True") ? " Approved " : " Not Approved " %>' />--%>
+                    </ItemTemplate>                    
+                </asp:TemplateField>
                                 <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
                                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />

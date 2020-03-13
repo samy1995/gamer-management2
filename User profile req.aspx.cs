@@ -15,16 +15,20 @@ namespace gamer_management2
     {
         public string cnstring = "Data Source=DESKTOP-BQ12MSI;Initial Catalog=Gamer-Management;Integrated Security=True";
         private readonly object Pending;
-
+        int n=0;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(cnstring);
             String s, p;
             String temp = null;
-            int n;
+
             var sb = new System.Text.StringBuilder();
             con.Open();
+
+
             if (!this.IsPostBack)
             {
 
@@ -39,35 +43,35 @@ namespace gamer_management2
 
                 da.Fill(ds);
 
+               
+                    email.Text = ds.Tables[0].Rows[0]["email_address"].ToString();
 
-                email.Text = ds.Tables[0].Rows[0]["email_address"].ToString();
-
-                s = ds.Tables[0].Rows[0]["password"].ToString();
+                    s = ds.Tables[0].Rows[0]["password"].ToString();
 
 
-                for (int i = 0; i < s.Length; i++)
-                {
-                    temp = s.Replace(s[i], '*');
-                    sb.Append(temp[i].ToString());
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        temp = s.Replace(s[i], '*');
+                        sb.Append(temp[i].ToString());
+                    }
+                    password.Text = sb.ToString();
+                    fntxt.Text = ds.Tables[0].Rows[0]["first_name"].ToString();
+
+                    lntxt.Text = ds.Tables[0].Rows[0]["last_name"].ToString();
+
+                    dobtxt.Text = ds.Tables[0].Rows[0]["date_of_birth"].ToString();
+                    DropDownList1.Text = ds.Tables[0].Rows[0]["access_type"].ToString();
+
+                    phntxt.Text = ds.Tables[0].Rows[0]["phone_number"].ToString();
+
+                    DropDownList2.Text = ds.Tables[0].Rows[0]["department"].ToString();
+
+                    adrstxt.Text = ds.Tables[0].Rows[0]["address"].ToString();
+                    adrstxt0.Text = ds.Tables[0].Rows[0]["postal_code"].ToString();
+
+
                 }
-                password.Text = sb.ToString();
-                fntxt.Text = ds.Tables[0].Rows[0]["first_name"].ToString();
-
-                lntxt.Text = ds.Tables[0].Rows[0]["last_name"].ToString();
-
-                dobtxt.Text = ds.Tables[0].Rows[0]["date_of_birth"].ToString();
-                DropDownList1.Text = ds.Tables[0].Rows[0]["access_type"].ToString();
-
-                phntxt.Text = ds.Tables[0].Rows[0]["phone_number"].ToString();
-
-                DropDownList2.Text = ds.Tables[0].Rows[0]["department"].ToString();
-
-                adrstxt.Text = ds.Tables[0].Rows[0]["address"].ToString();
-                adrstxt0.Text = ds.Tables[0].Rows[0]["postal_code"].ToString();
-
-
-            }
-
+           
         }
 
         protected void logoutbtn_Click(object sender, EventArgs e)
@@ -91,11 +95,19 @@ namespace gamer_management2
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                String str = "INSERT INTO Request (Request_Status,email_address) VALUES ('Pending', '" + email.Text.ToString() + "')";
+                String str = "INSERT INTO Request (Request_Status,email_address,User_id) VALUES ('Pending', '" + email.Text.ToString() + "','"+ n +"')";
                 SqlCommand cmd = new SqlCommand(str, con);
 
                 cmd.ExecuteNonQuery();
-                Label1.Text = "Request Submitted Successfully...!!";
+                Button3.Visible = false;
+                Txt_Msg.Visible = true;
+                Txt_Msg.Text = "Request Submitted Successfully and Waiting for Approval...!!";
+            }
+            else
+            {
+                Button3.Visible = true;
+                Txt_Msg.Visible = false;
+                
             }
         }
 
@@ -129,3 +141,48 @@ namespace gamer_management2
         }
     }
 }
+
+
+
+
+//try
+//{
+//    String Status = "";
+//    String str = "SELECT * from Request WHERE User_id='" + n + "'";
+//    SqlCommand cmd = new SqlCommand(str, con);
+
+//    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+//    DataSet ds = new DataSet();
+
+//    da.Fill(ds);
+//    Status = ds.Tables[0].Rows[0]["Request_Status"].ToString();
+
+//    if (Status == "Approved")
+//    {
+//        Button3.Visible = false;
+//        Txt_Msg.Visible = false;
+
+//    }
+
+//    if (Status == "pending")
+//    {
+//        Button3.Visible = false;
+//        Txt_Msg.Visible = true;
+//        Txt_Msg.Text = "Request Pending";
+//    }
+
+
+//    if (Status == "Declined")
+//    {
+//        Button3.Visible = true;
+//        Txt_Msg.Visible = false;
+
+//    }
+
+
+//}
+//catch
+//{
+
+//}

@@ -91,6 +91,9 @@
             width: 192px;
             font-weight: bold;
         }
+        .auto-style31 {
+            font-size: large;
+        }
     </style>
 </head>
 <body>
@@ -211,6 +214,9 @@
                         </asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button3" runat="server" Text="Request Elevated Access" Width="279px" OnClick="Button3_Click" CausesValidation="false"/>
+                        <strong>
+                        <asp:Label ID="Txt_Msg" runat="server" Text="Label" Visible="False" CssClass="auto-style31" Text-size="18pt"></asp:Label>
+                        </strong>
                     </td>
                 </tr>
                 <tr>

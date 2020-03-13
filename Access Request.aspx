@@ -36,7 +36,7 @@
         }
         .auto-style16 {
             width: 2830px;
-            text-align: center;
+            text-align: left;
         }
         .auto-style17 {
             font-size: xx-large;
@@ -66,6 +66,9 @@
         }
         .auto-style20 {
             font-size: x-large;
+        }
+        .auto-style21 {
+            font-size: medium;
         }
         </style>
 </head>
@@ -117,25 +120,35 @@
 &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="Button4" runat="server" Text="Search" OnClick="Button4_Click" style="height: 26px" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Approve" Width="85px" />
-                        <asp:Button ID="Button7" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Decline" Width="85px" />
+                        <asp:Button ID="Button6" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Approve" Width="85px" OnClick="Button6_Click" />
+                        <asp:Button ID="Button7" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="20px" Text="Decline" Width="85px" OnClick="Button7_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style16" colspan="2">
                         <br />
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="312px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="Request_id">
+                        <strong>
+                        <asp:Label ID="Label5" runat="server" CssClass="auto-style21"></asp:Label>
+                        </strong>
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="34px" Width="312px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="email_address">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
+                                <%--<asp:CommandField ShowSelectButton="True" />--%>
+                                 <asp:TemplateField>
+                                     <ItemTemplate>
+                                         <asp:CheckBox ID="CheckBox1" runat="server" />
+                                     </ItemTemplate>
+                                 </asp:TemplateField>
                                 <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" ReadOnly="True" InsertVisible="False" />
+                                <asp:BoundField DataField="email_address" HeaderText="email_address" SortExpression="email_address" ReadOnly="True" />
                                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
                                 <asp:BoundField DataField="department" HeaderText="department" SortExpression="department" />
                                 <asp:BoundField DataField="access_type" HeaderText="access_type" SortExpression="access_type" />
-                                <asp:BoundField DataField="Request_id" HeaderText="Request_id" InsertVisible="False" ReadOnly="True" SortExpression="Request_id" />
-                                <asp:BoundField DataField="Request_status" HeaderText="Request_status" SortExpression="Request_status" />
+                                <asp:BoundField DataField="Request_id" HeaderText="Request_id" SortExpression="Request_id" />
+                                 <asp:BoundField DataField="Request_Status" HeaderText="Request_Status" SortExpression="Request_Status" />
                             </Columns>
                             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -147,13 +160,7 @@
                             <SortedDescendingCellStyle BackColor="#FCF6C0" />
                             <SortedDescendingHeaderStyle BackColor="#820000" />
                         </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString2 %>" SelectCommand="SELECT 
-user_profile.User_id, user_profile .first_name, user_profile .last_name, user_profile .department, user_profile .access_type, Request.Request_id, Request.Request_status
-FROM
-user_profile 
-JOIN Request
-ON user_profile.email_address = Request.email_address
-">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString2 %>" SelectCommand="SELECT User_profile.User_id,User_profile.email_address, User_profile.first_name, User_profile.last_name, User_profile.department, User_profile.access_type, Request.Request_id, Request.Request_Status FROM User_profile INNER JOIN Request ON User_profile.User_id = Request.User_id where Request.Request_Status = 'pending'">
                         </asp:SqlDataSource>
                     </td>
                 </tr>

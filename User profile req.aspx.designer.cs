@@ -249,6 +249,15 @@ namespace gamer_management2
         protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
+        /// Txt_Msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Txt_Msg;
+
+        /// <summary>
         /// phnlbl control.
         /// </summary>
         /// <remarks>
