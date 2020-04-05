@@ -33,7 +33,7 @@ namespace gamer_management2
                 cmd.Connection = con;
                 da.SelectCommand = cmd;
                 cmd.Parameters.AddWithValue("first_name", TextBox1.Text);
-                cmd.Parameters.AddWithValue("department", DropDownList1.Text);
+                
                 dt = new DataTable();
                 da.Fill(dt);
                 
@@ -43,11 +43,6 @@ namespace gamer_management2
             con.Close();
             
                 
-        }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -65,14 +60,9 @@ namespace gamer_management2
             Response.Redirect("Users.aspx");
         }
 
-        protected void Button6_Click(object sender, EventArgs e)
+        protected void logoutbtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("Login.aspx");
         }
     }
 

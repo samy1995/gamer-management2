@@ -74,11 +74,6 @@ namespace gamer_management2
            
         }
 
-        protected void logoutbtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
-
         protected void Button1_Click1(object sender, EventArgs e)
         {
             Response.Redirect("Welcome Gamer.aspx");
@@ -138,6 +133,11 @@ namespace gamer_management2
                 Response.Redirect("User profile.aspx");
 
             }
+        }
+
+        protected void logoutbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

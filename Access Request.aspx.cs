@@ -26,20 +26,14 @@ namespace gamer_management2
 
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         protected void btn_Welcome_Click(object sender, EventArgs e)
         {
             Response.Redirect("Welcome Admin");
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
+       
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -115,6 +109,13 @@ namespace gamer_management2
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
         }
+
+        protected void logoutbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+      
     }
  }
 

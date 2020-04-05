@@ -4,48 +4,23 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+     <link href="Content/bootstrap-sketchy.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <link href="Content/bootstrap-sketchy-grid.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap-sketchy.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 160px;
-        }
-        .auto-style2 {
-            width: 100%;
-        }
-        .auto-style7 {
-            width: 201px;
-            height: 23px;
-        }
         .auto-style8 {
-            width: 106px;
+            width: 140px;
             height: 23px;
         }
         .auto-style9 {
             height: 23px;
             margin-left: 40px;
-        }
-        .auto-style10 {
-            width: 106px;
-        }
-        .auto-style11 {
-            width: 201px;
-            font-weight: bold;
-        }
-        .auto-style12 {
-            width: 105px;
-        }
-        .auto-style13 {
-            width: 203px;
-            font-weight: bold;
-        }
-        .auto-style16 {
-            width: 101px;
+            width: 209px;
         }
         .auto-style19 {
-            font-weight: bold;
-        }
-        .auto-style20 {
-            width: 101px;
             font-weight: bold;
         }
         html {
@@ -65,81 +40,59 @@
         .auto-style22 {
             font-weight: bold;
             font-size: x-large;
+            color: #CC0000;
         }
         .auto-style23 {
             width: 89%;
         }
-        .auto-style24 {
-            width: 55px;
-            font-weight: bold;
-        }
-        .auto-style27 {
-            height: 55px;
-            text-align: center;
-        }
-        .auto-style28 {
-            width: 194px;
-            font-weight: bold;
-        }
-        .auto-style29 {
-            height: 55px;
-            text-align: left;
-            width: 163px;
-        }
-        .auto-style31 {
-            width: 100%;
-            margin-top: 0px;
-        }
-        .auto-style32 {
-            text-align: center;
-        }
         .auto-style33 {
             width: 100%;
             height: 9px;
+            color: #FFFFFF;
         }
         .auto-style34 {
             font-size: large;
         }
+        .auto-style35 {
+            width: 686px;
+        }
+        .auto-style36 {
+            width: 209px;
+        }
+        .auto-style37 {
+            width: 140px;
+        }
+        .auto-style38 {
+            font-weight: bold;
+            width: 140px;
+        }
     </style>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style33">
+<body class="bg-dark">
+    <form class="form-group" id="form1" runat="server">
+        <div class="text-center">
+        <asp:Label ID="gmlbl" runat="server" Font-Bold="True" Font-Size="42pt" Text="GAMER MANAGEMENT" CssClass="auto-style33"></asp:Label>
+        <div class="text-right">
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass="auto-style22" style="color: #CC0000; text-decoration: none">Logout</asp:LinkButton>
+        </div>
+            <div class="text-left">
+            
+                        <asp:Label ID="uplbl" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="USER PROFILE" CssClass="auto-style22"></asp:Label>
+                        <br />
+            <asp:Button CssClass="btn btn-warning" ID="Button1" runat="server" Font-Bold="True" Text="Welcome" Width="166px" Height="37px" CausesValidation="false" OnClick="Button1_Click1"/>
+                        <br />
+                <asp:Button CssClass="btn btn-warning" ID="mpbtn" runat="server" Text="My Profile" Width="166px" Font-Bold="True" Height="37px" CausesValidation="false" OnClick="Button2_Click1"/>
+            <br />
+                <asp:Button CssClass="btn btn-warning" ID="Button3" runat="server" Text="Users" Width="166px" Font-Bold="True" Height="37px" CausesValidation="false" OnClick="Button2_Click1"/>
+                    
+        </div>
+           
+            <div class="auto-style34">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+            <table class="auto-style23 container-fluid table-dark" style="width: 82%; height: 580px;">
+
                 <tr>
-                    <td class="auto-style29">
-                            <em>
-                            <asp:Button ID="Button1" runat="server" Font-Bold="True" Text="Welcome" Width="162px" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" CausesValidation="false" OnClick="Button1_Click1"/>
-                            </em>
-                    </td>
-                    <td class="auto-style32">
-                        <asp:Label ID="gmlbl" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="GAMER MANAGEMENT" CssClass="auto-style19"></asp:Label>
-                    </td>
-                    <td class="auto-style27">
-                        <asp:LinkButton ID="logoutbtn" runat="server" CausesValidation="false" OnClick="logoutbtn_Click">Logout</asp:LinkButton>
-                    </td>
-                </tr>
-            </table>
-            <table class="auto-style31">
-                <tr>
-                    <td class="auto-style1">
-                        <asp:Panel ID="Panel1" runat="server" CssClass="auto-style19">
-                            <asp:Button ID="mpbtn" runat="server" Text="My Profile" Width="162px" Font-Bold="True" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" OnClick="mpbtn_Click" CausesValidation="false"/>
-                        </asp:Panel>
-                    </td>
-                    <td class="auto-style28">
-                        <asp:Label ID="uplbl" runat="server" Font-Bold="True" Font-Size="X-Large" Text="USER PROFILE" CssClass="auto-style22"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                </table>
-            <table class="auto-style23">
-                <tr>
-                    <td class="auto-style7">
-                        <strong>
-                        <asp:Button ID="Button3" runat="server" BackColor="#993333" ForeColor="#FFFFCC" Height="33px" OnClick="Button3_Click" Text="Users" Width="162px" CssClass="auto-style19" CausesValidation="false"/>
-                        </strong>
-                    </td>
                     <td class="auto-style8">
                         <asp:Label ID="emailbl" runat="server" Font-Bold="True" Text="Email Address" CssClass="auto-style19"></asp:Label>
                         <br />
@@ -152,26 +105,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style10">
+                    <td class="auto-style37">
                         <asp:Label ID="pslbl" runat="server" Font-Bold="True" Text="Password" CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <br />
-                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19" OnTextChanged="password_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" Width="209px" CssClass="auto-style19"></asp:TextBox>
                         <b>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="password" ErrorMessage="* Field Cannot Be Blank" ForeColor="Red"></asp:RequiredFieldValidator>
                         </b>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style10">
+                    <td class="auto-style37">
                         <asp:Label ID="fnlbl" runat="server" Font-Bold="True" Text="First Name" CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <br />
                         <asp:TextBox ID="fntxt" runat="server" Width="209px" CssClass="auto-style19"></asp:TextBox>
                         <b>
@@ -179,16 +130,13 @@
                         </b>
                     </td>
                 </tr>
-            </table>
-            <table class="auto-style23">
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td class="auto-style37">
                         <br />
                         <asp:Label ID="lnlbl" runat="server" Font-Bold="True" Text="Last Name" CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <asp:TextBox ID="lntxt" runat="server" Width="209px" CssClass="auto-style19"></asp:TextBox>
                         <b>&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="lntxt" ErrorMessage="* Field Cannot Be Blank" ForeColor="Red"></asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -196,12 +144,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td class="auto-style37">
                         <asp:Label ID="doblbl" runat="server" Font-Bold="True" Text="Date of Birth" CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <br />
                         <asp:TextBox ID="dobtxt" runat="server" Width="209px" CssClass="auto-style19"></asp:TextBox>
                         <b>
@@ -210,29 +157,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td class="auto-style37">
                         <asp:Label ID="accesslbl" runat="server" Font-Bold="True" Text="Access Type" CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
-                        <asp:Localize ID="Localize1" runat="server"></asp:Localize>
+                    <td class="auto-style36">
                         <br />
                         <asp:DropDownList ID="DropDownList1" runat="server" Width="219px" CssClass="auto-style19">
                             <asp:ListItem>Gamer</asp:ListItem>
                             <asp:ListItem>Host</asp:ListItem>
                             <asp:ListItem>Admin</asp:ListItem>
                         </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;
-                    </td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                        </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td class="auto-style37">
                         <asp:Label ID="phnlbl" runat="server" Font-Bold="True" Text="Phone Number " CssClass="auto-style19"></asp:Label>
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <br />
                         <asp:TextBox ID="phntxt" runat="server" Width="209px" CssClass="auto-style19" MaxLength="10" TextMode="Number"></asp:TextBox>
                         <b>
@@ -240,16 +185,13 @@
                         </b>
                     </td>
                 </tr>
-            </table>
-            <table class="auto-style23">
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style16">
+                    <td class="auto-style37">
                         <asp:Label ID="dptlbl" runat="server" Font-Bold="True" Text="Department" CssClass="auto-style19"></asp:Label>
                         <br />
                         <br />
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <asp:DropDownList ID="DropDownList2" runat="server" Width="219px" CssClass="auto-style19">
                             <asp:ListItem>Real-Time Strategy</asp:ListItem>
                             <asp:ListItem>Technology</asp:ListItem>
@@ -260,11 +202,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style16">
+                    <td class="auto-style37">
                         <asp:Label ID="adrslbl" runat="server" Font-Bold="True" Text="Address" CssClass="auto-style19"></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style36">
                         <asp:TextBox ID="adrstxt" runat="server" Width="209px" ValidateRequestMode="Enabled" CssClass="auto-style19"></asp:TextBox>
                         <b>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="adrstxt" ErrorMessage="* Field Cannot Be Blank" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -273,67 +214,32 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td>
+                    <td class="auto-style38">&nbsp;</td>
+                    <td class="auto-style36">
                         <asp:TextBox ID="adrstxt0" runat="server" Width="209px"  ValidateRequestMode="Enabled" CssClass="auto-style19"></asp:TextBox>
                         </td>
                 </tr>
-                <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td><strong>
-                        <asp:Label ID="Label1" runat="server" CssClass="auto-style34" ForeColor="Red" Height="33px" Width="162px"></asp:Label>
-                        </strong></td>
-                </tr>
-            </table>
-            <table class="auto-style2">
-                <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style24">&nbsp;</td>
-                    <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="ebtn" runat="server" Text="Edit" Width="57px" Font-Bold="True"  CssClass="auto-style19"  Height="30px" OnClick="ebtn_Click1"  />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </td>
-                </tr>
-            </table>
+            
+                </table>
+              <div class="auto-style35">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button CssClass="btn btn-success" ID="ebtn" runat="server" Text="Edit" Width="164px" OnClick="ebtn_Click"  />
+                    <br />
+              </div>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True"></asp:Label>
             <b>
             <br />
-            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
             <br />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Gamer-ManagementConnectionString3 %>" DeleteCommand="DELETE FROM [User_profile] WHERE [email_address] = @email_address" InsertCommand="INSERT INTO [User_profile] ([email_address], [password], [first_name], [last_name], [date_of_birth], [access_type], [phone_number], [department], [address]) VALUES (@email_address, @password, @first_name, @last_name, @date_of_birth, @access_type, @phone_number, @department, @address)" SelectCommand="SELECT * FROM [User_profile]" UpdateCommand="UPDATE [User_profile] SET [User_id] = @User_id, [password] = @password, [first_name] = @first_name, [last_name] = @last_name, [date_of_birth] = @date_of_birth, [access_type] = @access_type, [phone_number] = @phone_number, [department] = @department, [address] = @address WHERE [email_address] = @email_address">
-                <DeleteParameters>
-                    <asp:Parameter Name="email_address" Type="String" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="email_address" Type="String" />
-                    <asp:Parameter Name="password" Type="String" />
-                    <asp:Parameter Name="first_name" Type="String" />
-                    <asp:Parameter Name="last_name" Type="String" />
-                    <asp:Parameter DbType="Date" Name="date_of_birth" />
-                    <asp:Parameter Name="access_type" Type="String" />
-                    <asp:Parameter Name="phone_number" Type="String" />
-                    <asp:Parameter Name="department" Type="String" />
-                    <asp:Parameter Name="address" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="User_id" Type="Int32" />
-                    <asp:Parameter Name="password" Type="String" />
-                    <asp:Parameter Name="first_name" Type="String" />
-                    <asp:Parameter Name="last_name" Type="String" />
-                    <asp:Parameter DbType="Date" Name="date_of_birth" />
-                    <asp:Parameter Name="access_type" Type="String" />
-                    <asp:Parameter Name="phone_number" Type="String" />
-                    <asp:Parameter Name="department" Type="String" />
-                    <asp:Parameter Name="address" Type="String" />
-                    <asp:Parameter Name="email_address" Type="String" />
-                </UpdateParameters>
-            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            <br />
             <br />
             <br />
             </b>
         </div>
+        </div>
     </form>
 </body>
+
 </html>

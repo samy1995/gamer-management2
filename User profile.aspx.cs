@@ -118,11 +118,13 @@ namespace gamer_management2
             {
                 string str = "insert into User_profile (email_address, password, first_name, last_name, date_of_birth, access_type, phone_number, department, address, postal_code)values('" + email.Text.ToString() + "','" + password.Text.ToString() + "','" + fntxt.Text.ToString() + "','" + lntxt.Text.ToString() + "','" + dobtxt.Text.ToString() + "','" + DropDownList1.Text.ToString() + "','" + phntxt.Text.ToString() + "','" + DropDownList2.Text.ToString() + "','" + adrstxt.Text.ToString() + "','" + adrstxt0.Text.ToString() + "')";
 
-                Label2.Text = "Profile Updated Successfully...!!";
+                Label1.Text = "Profile Updated Successfully...!!";
                 Response.Redirect("User profile.aspx");
 
             }
         }
+
+      
     }
 }
 

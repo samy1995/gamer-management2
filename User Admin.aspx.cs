@@ -105,6 +105,8 @@ namespace gamer_management2
             cmd1.Connection = con;
             cmd1.ExecuteNonQuery();
         }
+
+       
     }
  }
 
